@@ -1,0 +1,28 @@
+vpc:10.0.0.0/24
+tag: set_1
+
+p_subnet: 10.0.0.0/26 -- 0-127 128-254
+vpc: vpc_id (output)
+tag: public_subnet_set_1
+
+ec2_ami: ami-0f540e9f488cfa27d
+type: t2.micro
+tag: linux_instance
+key_pair: ak_te_kp
+subnet: subnet_id (output)
+
+security group
+in:
+ssh -> tcp -> 22 -> custom -> 0.0.0.0/0
+out:
+all -> all -> custom -> 0.0.0.0/0
+
+igw
+output (igw_id)
+attach to ppublic subnet
+tag: igw_set_1
+
+route table:
+attach to vpc_id
+10.0.0.0/24 -> local
+
