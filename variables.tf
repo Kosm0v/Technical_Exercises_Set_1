@@ -12,3 +12,13 @@ variable "subnets" {
     }))
     description = "Subnets used for vpc"
 }
+
+variable "security_groups" {
+    type = map(map(list(object({
+        description = string
+        from_port = number
+        to_port = number
+        protocol = string
+        cidr_blocks = list(string)
+    }))))
+}

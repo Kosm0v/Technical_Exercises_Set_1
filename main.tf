@@ -11,3 +11,9 @@ module "aws_subnet" {
     vpc_id = module.aws_vpc["Main"].vpc_id
     cidr_block = each.value.cidr_block
 }
+
+module "security_groups" {
+  source = "./Modules/sg"
+  ingress_rules = var.security_groups["allow_all"]["ingress_rules"]
+  egress_rules = var.security_groups["allow_all"]["ingress_rules"]
+}
