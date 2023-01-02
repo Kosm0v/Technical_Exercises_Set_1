@@ -19,10 +19,13 @@ all -> all -> custom -> 0.0.0.0/0
 
 igw
 output (igw_id)
-attach to ppublic subnet
+attach to vpc
 tag: igw_set_1
 
 route table:
-attach to vpc_id
+attach tosubnet
 10.0.0.0/24 -> local
+
+associate ec2 with subnet/vpc
+
 

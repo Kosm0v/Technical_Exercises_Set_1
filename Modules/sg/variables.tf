@@ -37,3 +37,8 @@ variable egress_rules {
     description = "egress_rules"
 }
 
+variable "security_groups_ids" {
+  type = list(string)
+  default = []
+  description = ""
+}

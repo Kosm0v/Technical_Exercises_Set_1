@@ -22,3 +22,10 @@ variable "security_groups" {
         cidr_blocks = list(string)
     }))))
 }
+
+variable "ec2_instances" {
+  type = map(object({
+    ami_id = string
+    instance_type = string
+  }))
+}

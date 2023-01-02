@@ -32,3 +32,10 @@ security_groups = {
     }]
   }
 }
+
+ec2_instances = {
+  "web_server" = {
+    ami_id = "ami-04b57051a8c8f7c8d"
+    instance_type = "t2.micro"
+  }
+}
